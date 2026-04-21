@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Service</title>
+  <link rel="stylesheet" href="/css/admin.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <a href="/" class="header__logo">Service</a>
+
+      <nav class="header__nav">
+        <a href="/" class="nav__link">Home</a>
+        <a href="/plans" class="nav__link">Piani</a>
+        <a href="/admin" class="nav__link nav__link--active">Admin</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="/logout" class="btn btn--ghost">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-page">
+    <section class="admin-hero">
+      <div class="admin-hero__content">
+        <p class="eyebrow">Pannello amministratore</p>
+        <h1 class="admin-title">Utenti registrati</h1>
+        <p class="admin-subtitle">
+          Monitora l'andamento delle registrazioni e visualizza l'evoluzione degli utenti nel tempo.
+        </p>
+      </div>
+    </section>
+
+    <section class="admin-content">
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-label">Totale utenti</span>
+          <strong class="stat-value" th:text="${totalUsers}">128</strong>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-label">Ultima registrazione</span>
+          <strong class="stat-value small" th:text="${lastRegistration}">2026-04-20 10:45</strong>
+        </article>
+      </div>
+      <input type="date" id="startDate">
+      <input type="date" id="endDate">
+
+      <select id="groupBy">
+        <option value="day">Giorno</option>
+        <option value="month">Mese</option>
+        <option value="year">Anno</option>
+      </select>
+      <article class="chart-card">
+        <div class="card-head">
+          <h2>Registrazioni per timestamp</h2>
+          <span class="card-note">Dati aggiornati in tempo reale lato backend</span>
+        </div>
+
+        <div class="chart-wrapper">
+          <canvas id="usersChart"></canvas>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

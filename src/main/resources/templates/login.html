@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Consulenza+</title>
+  <link rel="stylesheet" href="/css/auth.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <a href="/" class="header__logo">CONSULENZA+</a>
+      <nav class="header__nav" aria-label="Navigazione principale">
+        <a class="nav__link" href="/">Home</a>
+        <a class="nav__link" href="/plans">Piani</a>
+        <a class="nav__link" href="/register">Registrati</a>
+      </nav>
+      <a href="/register" class="btn btn--secondary">Crea account</a>
+    </div>
+  </header>
+
+  <main class="auth">
+    <div class="container">
+      <div class="auth__grid">
+        <section class="auth__content">
+          <div class="eyebrow">Area riservata</div>
+          <h1 class="auth__title">Accedi al tuo spazio consulenziale.</h1>
+          <p class="auth__description">Una pagina di login coerente con il resto del sito, pensata per trasmettere fiducia, struttura e continuità con la home e la plan page.</p>
+          <ul class="auth__points">
+            <li>Accesso rapido a dashboard, documenti e aggiornamenti operativi.</li>
+            <li>Esperienza visuale coerente con il brand dark premium.</li>
+            <li>Call to action secondaria verso la registrazione per nuovi clienti.</li>
+          </ul>
+        </section>
+
+        <section class="auth-card" aria-labelledby="login-title">
+          <div class="auth-card__header">
+            <h2 class="auth-card__title" id="login-title">Bentornato</h2>
+            <p class="auth-card__text">Inserisci le tue credenziali per accedere alla piattaforma.</p>
+          </div>
+
+          <form class="form" id="form">
+            <div class="form__row">
+              <label class="label" for="email">Email aziendale</label>
+              <input class="input" id="email" name="email" type="email" placeholder="nome@azienda.it" />
+            </div>
+
+            <div class="form__row">
+              <label class="label" for="password">Password</label>
+              <input class="input" id="password" name="password" type="password" placeholder="Inserisci la password" />
+            </div>
+
+            <div class="form__meta">
+              <label class="check"><input type="checkbox" /> Ricordami</label>
+              <a class="link" href="#">Password dimenticata?</a>
+            </div>
+
+            <button class="btn btn--primary" type="submit">Accedi</button>
+
+            <div class="divider">oppure</div>
+
+            <a class="btn btn--secondary" href="/register">Registrati ora</a>
+          </form>
+
+          <p class="auth-card__footer">Non hai ancora un account? <a class="link" href="/register">Crea il tuo profilo</a></p>
+
+          <div class="auth-note">Accesso dedicato a clienti, partner e referenti aziendali che collaborano con il team di consulenza.</div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__copy">Consulenza+ — accesso clienti con interfaccia coerente al sistema visivo del sito.</p>
+      <p class="footer__meta">Login pensato per brand identity, chiarezza e conversione.</p>
+    </div>
+  </footer>
+  <script src="/js/login.js"></script>
+</body>
+</html>

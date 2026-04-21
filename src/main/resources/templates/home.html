@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulenza Aziendale</title>
+  <link rel="stylesheet" href="/css/home.css" />
+  <link rel="stylesheet" href="/css/toggle_menu.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <a href="#top" class="header__logo">CONSULENZA+</a>
+      <nav class="header__nav" aria-label="Navigazione principale">
+        <a class="nav__link" href="#servizi">Servizi</a>
+        <a class="nav__link" href="#metodo">Metodo</a>
+        <a class="nav__link" href="#risultati">Risultati</a>
+        <a class="nav__link" href="#contatto">Contatto</a>
+      </nav>
+      <a href="/plans" class="btn btn--secondary">Vedi piani</a>
+      <a th:unless="${customer != null}" href="/login" class="btn btn--primary">Login</a>
+      <a th:if="${customer != null}" href="#" class="btn btn--primary" th:text="${customer.name}" id="toggle-btn"></a>
+      <nav id="menu">
+       <a href="/profile">Profilo</a>
+        <a href="/logout">LogOut</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero__grid">
+          <div>
+            <div class="eyebrow">Consulenza per aziende</div>
+            <h1 class="hero__title">Strategia, processi e crescita in una home più autorevole e orientata al business.</h1>
+            <p class="hero__description">Ho ridisegnato la home in modo drastico per renderla coerente con la plan page: più premium, più solida, più chiara nella proposta di valore. Il focus ora è su risultati, metodo e affidabilità percepita.</p>
+            <div class="hero__actions">
+              <a href="#servizi" class="btn btn--primary">Scopri i servizi</a>
+              <a href="/plans" class="btn btn--secondary">Guarda i piani</a>
+            </div>
+            <div class="hero__stats">
+              <article class="stat">
+                <strong>PMI</strong>
+                <span>percorsi adatti a imprese che vogliono crescere con ordine</span>
+              </article>
+              <article class="stat">
+                <strong>KPI</strong>
+                <span>approccio guidato da priorità, numeri e accountability</span>
+              </article>
+              <article class="stat">
+                <strong>1:1</strong>
+                <span>affiancamento diretto con imprenditore, management e team</span>
+              </article>
+            </div>
+          </div>
+
+          <aside class="hero__panel">
+            <h2>Cosa comunica questa nuova home</h2>
+            <p>Non una semplice vetrina, ma una pagina capace di posizionare il brand come partner consulenziale concreto, strutturato e orientato all’esecuzione.</p>
+            <ul class="hero__checklist">
+              <li>Messaggio iniziale più forte e immediato.</li>
+              <li>Gerarchia visiva coerente con la pagina piani.</li>
+              <li>Sezioni business-centric con tono più premium.</li>
+              <li>CTA più visibili e orientate alla conversione.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servizi">
+      <div class="container">
+        <div class="section__intro">
+          <div>
+            <h2 class="section__title">Una home costruita per far capire subito il valore</h2>
+            <p class="section__text">La nuova struttura abbandona un’impostazione generica e mette in primo piano i temi che contano davvero per un’azienda: organizzazione, performance, priorità e supporto decisionale.</p>
+          </div>
+          <p class="section__text">Il linguaggio visuale riprende il dark theme, i contrasti netti, le card premium e i dettagli verdi già introdotti nella plan page.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <span class="card__label">Organizzazione</span>
+            <h3>Processi più chiari</h3>
+            <p>La home ora presenta l’azienda come un partner che aiuta a mettere ordine, definire ruoli e stabilire priorità operative.</p>
+          </article>
+          <article class="card card--featured">
+            <span class="card__label">Crescita</span>
+            <h3>Più focus sui risultati</h3>
+            <p>Headline, blocchi informativi e CTA sono pensati per trasmettere evoluzione, controllo e supporto alla crescita.</p>
+          </article>
+          <article class="card">
+            <span class="card__label">Direzione</span>
+            <h3>Tono più autorevole</h3>
+            <p>Ogni sezione parla a imprenditori, manager e decision maker con una comunicazione più solida e meno generica.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="metodo">
+      <div class="container">
+        <div class="split">
+          <div class="stack">
+            <div>
+              <h2 class="section__title">Un percorso semplice da leggere</h2>
+              <p class="section__text">La home racconta il metodo in modo più chiaro, trasformando la percezione del servizio da consulenza generica a processo concreto, scandito in passaggi comprensibili.</p>
+            </div>
+            <article class="process-step">
+              <div class="process-step__number">01</div>
+              <div>
+                <h3>Analisi iniziale</h3>
+                <p>Raccolta esigenze, contesto aziendale, criticità e obiettivi prioritari.</p>
+              </div>
+            </article>
+            <article class="process-step">
+              <div class="process-step__number">02</div>
+              <div>
+                <h3>Definizione roadmap</h3>
+                <p>Traduzione delle priorità in un piano di lavoro ordinato, misurabile e sostenibile.</p>
+              </div>
+            </article>
+            <article class="process-step">
+              <div class="process-step__number">03</div>
+              <div>
+                <h3>Affiancamento operativo</h3>
+                <p>Supporto continuo per trasformare la strategia in esecuzione e risultati reali.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="metric-panel" id="risultati">
+            <div class="metric-panel__top">
+              <div>
+                <h3>Aree di impatto</h3>
+                <p>La nuova home visualizza meglio dove interviene la consulenza e cosa percepisce il visitatore come beneficio.</p>
+              </div>
+            </div>
+            <div class="metric-bars">
+              <div class="metric-bar">
+                <div class="metric-bar__head">
+                  <span>Chiarezza della proposta</span>
+                  <span>92%</span>
+                </div>
+                <div class="metric-bar__track"><div class="metric-bar__fill" style="width:92%"></div></div>
+              </div>
+              <div class="metric-bar">
+                <div class="metric-bar__head">
+                  <span>Percezione premium</span>
+                  <span>88%</span>
+                </div>
+                <div class="metric-bar__track"><div class="metric-bar__fill" style="width:88%"></div></div>
+              </div>
+              <div class="metric-bar">
+                <div class="metric-bar__head">
+                  <span>Orientamento alla conversione</span>
+                  <span>90%</span>
+                </div>
+                <div class="metric-bar__track"><div class="metric-bar__fill" style="width:90%"></div></div>
+              </div>
+              <div class="metric-bar">
+                <div class="metric-bar__head">
+                  <span>Coerenza con plan page</span>
+                  <span>95%</span>
+                </div>
+                <div class="metric-bar__track"><div class="metric-bar__fill" style="width:95%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <article class="card testimonial card--featured">
+            <span class="card__label">Posizionamento</span>
+            <blockquote>“La home non sembra più una pagina introduttiva generica, ma il primo touchpoint di una società di consulenza strutturata.”</blockquote>
+            <cite>Direzione creativa e conversion-oriented layout</cite>
+          </article>
+
+          <div class="stack">
+            <article class="card">
+              <span class="card__label">UX</span>
+              <h3>Più chiarezza nel percorso utente</h3>
+              <p>La navigazione accompagna meglio l’utente dalle informazioni principali fino alla scelta del piano o al contatto diretto.</p>
+            </article>
+            <article class="card">
+              <span class="card__label">Brand</span>
+              <h3>Stile coerente su tutto il sito</h3>
+              <p>La home è stata riallineata a palette, pesi visivi, card, CTA e tono della plan page per creare continuità.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="cta" id="contatto">
+          <div>
+            <h3>Vuoi che adatti anche le altre pagine allo stesso stile?</h3>
+            <p>Posso uniformare about, servizi, contatti e dettaglio piani con la stessa identità visiva e con componenti riutilizzabili.</p>
+          </div>
+          <a href="/plans" class="btn btn--primary">Apri i piani</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__copy">Consulenza+ — home page ridisegnata in chiave premium, coerente con la plan page e orientata alla conversione.</p>
+      <p class="footer__meta">Layout responsive, stile dark, CTA più chiare e struttura pensata per aziende.</p>
+    </div>
+  </footer>
+  <script src="/js/home.js"></script>
+</body>
+</html>

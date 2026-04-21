@@ -1,0 +1,19 @@
+#menu{
+  position: fixed;
+  top: 0;
+  left: -200px;
+  width: 200px;
+  height: 100vh;
+  background: #111;
+  padding: 20px;
+  transition: .3s;
+}
+
+#menu.open{ left: 0; }
+
+#menu a{
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 15px 0;
+}

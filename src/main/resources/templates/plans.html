@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piani Consulenza Aziendale</title>
+  <link rel="stylesheet" href="/css/plan.css" />
+  <link rel="stylesheet" href="/css/toggle_menu.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <a href="/" class="header__logo">CONSULENZA+</a>
+      <nav class="header__nav" aria-label="Navigazione principale">
+        <a class="nav__link" href="/">Home</a>
+        <a class="nav__link" href="#piani">Piani</a>
+        <a class="nav__link" href="#confronto">Confronto</a>
+        <a class="nav__link" href="#contatto">Contatto</a>
+      </nav>
+      <a href="#contatto" class="btn btn--secondary">Richiedi call</a>
+      <a th:unless="${customer != null}" href="/login" class="btn btn--primary">Login</a>
+      <a th:if="${customer != null}" href="#" class="btn btn--primary" th:text="${customer.name}" id="toggle-btn"></a>
+      <nav id="menu">
+        <a href="/profile">Profilo</a>
+        <a href="/logout">LogOut</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <div class="eyebrow">Piani per aziende</div>
+          <h1 class="hero__title">Consulenza aziendale con tre livelli di supporto, in base a complessità e obiettivi.</h1>
+          <p class="hero__description">Abbiamo strutturato tre piani realistici per PMI, aziende in crescita e organizzazioni più complesse. Ogni proposta include analisi, affiancamento operativo e momenti di revisione, con un livello crescente di strategia, presidio e personalizzazione.</p>
+          <div class="hero__actions">
+            <a href="#piani" class="btn btn--primary">Scopri i piani</a>
+            <a href="#confronto" class="btn btn--secondary">Vedi confronto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="container">
+        <div class="kpis">
+          <article class="kpi">
+            <strong>3</strong>
+            <span>piani modulari, ordinati dal più accessibile al più completo</span>
+          </article>
+          <article class="kpi">
+            <strong>30-90</strong>
+            <span>giorni di lavoro iniziale per impostare priorità, processi e roadmap</span>
+          </article>
+          <article class="kpi">
+            <strong>1:1</strong>
+            <span>affiancamento diretto con referente dedicato e review periodiche</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="piani">
+      <div class="container">
+        <div class="section__intro">
+          <div>
+            <h2 class="section__title">Tre piani pensati per esigenze diverse</h2>
+            <p class="section__text">L’ordine segue una logica di prezzo e profondità del servizio: si parte da una consulenza essenziale per mettere ordine e priorità, fino ad arrivare a un presidio strategico continuativo con reporting direzionale e supporto interfunzionale.</p>
+          </div>
+          <p class="section__text">I prezzi sono indicativi e mensili, adatti a una società di consulenza che lavora con imprese su organizzazione, processi, crescita commerciale e supporto al management.</p>
+        </div>
+
+        <div class="plans">
+          <article class="plan">
+            <h3 class="plan__name">Piano Start</h3>
+            <p class="plan__target">Per piccole aziende o team che vogliono strutturare processi, definire priorità e avere una guida esterna affidabile.</p>
+            <div class="plan__price">
+              <strong>€1.200</strong>
+              <span>/ mese</span>
+            </div>
+            <div class="plan__setup">Attivazione iniziale: €900 una tantum</div>
+            <ul class="plan__list">
+              <li>Audit iniziale su organizzazione, flussi operativi e criticità principali.</li>
+              <li>1 incontro strategico a settimana con imprenditore o referente interno.</li>
+              <li>Piano operativo mensile con priorità, azioni e responsabili.</li>
+              <li>Supporto consulenziale via email e messaggistica nei giorni lavorativi.</li>
+              <li>Report mensile sintetico con stato avanzamento e prossimi step.</li>
+            </ul>
+            <div class="plan__footer">
+              <a href="#contatto" class="btn btn--secondary">Richiedi proposta</a>
+              <p class="note">Ideale per: PMI, studi professionali, aziende in fase di organizzazione.</p>
+            </div>
+          </article>
+
+          <article class="plan plan--featured">
+            <div class="plan__badge">Più scelto</div>
+            <h3 class="plan__name">Piano Growth</h3>
+            <p class="plan__target">Per aziende che vogliono crescere con metodo, migliorare performance commerciali e introdurre controllo più costante.</p>
+            <div class="plan__price">
+              <strong>€2.800</strong>
+              <span>/ mese</span>
+            </div>
+            <div class="plan__setup">Attivazione iniziale: €1.500 una tantum</div>
+            <ul class="plan__list">
+              <li>Tutto il piano Start, con analisi più ampia su processi, vendite e KPI.</li>
+              <li>2 incontri settimanali, uno strategico e uno operativo con il team.</li>
+              <li>Dashboard mensile con indicatori chiave e analisi delle priorità.</li>
+              <li>Affiancamento nella definizione di procedure, ruoli e obiettivi trimestrali.</li>
+              <li>Supporto nelle riunioni chiave con management, commerciale o operation.</li>
+            </ul>
+            <div class="plan__footer">
+              <a href="#contatto" class="btn btn--primary">Prenota call strategica</a>
+              <p class="note">Ideale per: aziende in crescita, multi-team, business con obiettivi di scala.</p>
+            </div>
+          </article>
+
+          <article class="plan">
+            <h3 class="plan__name">Piano Executive</h3>
+            <p class="plan__target">Per imprese strutturate che richiedono presidio continuativo, supporto direzionale e coordinamento trasversale su più aree.</p>
+            <div class="plan__price">
+              <strong>€5.500</strong>
+              <span>/ mese</span>
+            </div>
+            <div class="plan__setup">Attivazione iniziale: €2.500 una tantum</div>
+            <ul class="plan__list">
+              <li>Analisi approfondita con roadmap semestrale e obiettivi condivisi con la direzione.</li>
+              <li>Presenza consulenziale continuativa con incontri multi-funzione e supporto al management.</li>
+              <li>Cruscotto avanzato con KPI economici, organizzativi e commerciali.</li>
+              <li>Facilitazione di riunioni strategiche, decision support e verifica esecuzione.</li>
+              <li>Accesso prioritario al team di consulenza e interventi rapidi su temi critici.</li>
+            </ul>
+            <div class="plan__footer">
+              <a href="#contatto" class="btn btn--secondary">Parla con un consulente</a>
+              <p class="note">Ideale per: aziende strutturate, gruppi, imprese con governance più complessa.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="confronto">
+      <div class="container">
+        <div class="section__intro">
+          <div>
+            <h2 class="section__title">Cosa cambia tra i tre livelli</h2>
+            <p class="section__text">La differenza non è solo nel numero di incontri, ma soprattutto nel grado di presidio, nella profondità dell’analisi e nel coinvolgimento del consulente nelle decisioni operative e strategiche.</p>
+          </div>
+        </div>
+
+        <div class="compare">
+          <table>
+            <thead>
+              <tr>
+                <th>Voce</th>
+                <th>Start</th>
+                <th>Growth</th>
+                <th>Executive</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Prezzo mensile</td>
+                <td>€1.200</td>
+                <td>€2.800</td>
+                <td>€5.500</td>
+              </tr>
+              <tr>
+                <td>Onboarding iniziale</td>
+                <td>Audit essenziale</td>
+                <td>Audit esteso + KPI</td>
+                <td>Assessment direzionale completo</td>
+              </tr>
+              <tr>
+                <td>Ritmo incontri</td>
+                <td>1 a settimana</td>
+                <td>2 a settimana</td>
+                <td>Presidio continuativo</td>
+              </tr>
+              <tr>
+                <td>Supporto al management</td>
+                <td>Base</td>
+                <td>Intermedio</td>
+                <td>Avanzato</td>
+              </tr>
+              <tr>
+                <td>Reporting</td>
+                <td>Mensile</td>
+                <td>Mensile con dashboard</td>
+                <td>Dashboard avanzata + review executive</td>
+              </tr>
+              <tr>
+                <td>Adatto a</td>
+                <td>PMI e aziende da strutturare</td>
+                <td>Aziende in crescita</td>
+                <td>Organizzazioni complesse</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cta" id="contatto">
+          <div>
+            <h3>Vuoi adattare questi piani al tuo brand?</h3>
+            <p>Posso trasformare questa pagina in una versione ancora più corporate, aggiungere il tuo logo, cambiare naming e inserire FAQ o form contatti.</p>
+          </div>
+          <a href="mailto:info@azienda.it" class="btn btn--primary">Contattaci</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__copy">Consulenza+ — piani di consulenza aziendale pensati per supportare crescita, efficienza e decisioni strategiche.</p>
+      <p class="footer__meta">Prezzi indicativi, personalizzabili in base a settore, dimensione aziendale e perimetro di intervento.</p>
+    </div>
+  </footer>
+  <script src="/js/home.js"></script>
+</body>
+</html>

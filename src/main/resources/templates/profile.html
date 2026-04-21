@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profilo | Service</title>
+  <link rel="stylesheet" href="/css/profile.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <a href="/" class="header__logo">Service</a>
+
+      <nav class="header__nav">
+        <a href="/" class="nav__link">Home</a>
+        <a href="/plans" class="nav__link">Piani</a>
+        <a href="/" class="nav__link">Dashboard</a>
+        <a href="/profile" class="nav__link nav__link--active">Profilo</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="/logout" class="btn btn--ghost">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="profile-page">
+    <section class="profile-hero">
+      <div class="profile-hero__content">
+        <p class="eyebrow">Area riservata</p>
+        <h1 class="profile-title">Il tuo profilo</h1>
+        <p class="profile-subtitle">
+          Consulta i tuoi dati e aggiorna la password del tuo account.
+        </p>
+      </div>
+    </section>
+
+    <section class="profile-content">
+      <div class="profile-grid">
+        <article class="profile-card">
+          <div class="card-head">
+            <h2>Informazioni account</h2>
+            <span class="badge">Attivo</span>
+          </div>
+
+          <div class="info-list">
+            <div class="info-row">
+              <span class="info-label">Nome</span>
+              <span class="info-value" th:text="${customer.name}">Mario</span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">Cognome</span>
+              <span class="info-value" th:text="${customer.surname}">Rossi</span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">Email</span>
+              <span class="info-value" th:text="${customer.email}">mario@email.com</span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">Azienda</span>
+              <span class="info-value" th:text="${customer.company}">Rossi Consulting SRL</span>
+            </div>
+
+            <!-- <div class="info-row">
+              <span class="info-label">Telefono</span>
+              <span class="info-value" th:text="${customer.phone}">+39 333 1234567</span>
+            </div> -->
+          </div>
+        </article>
+
+        <article class="profile-card">
+          <div class="card-head">
+            <h2>Cambia password</h2>
+            <span class="card-note">Aggiornamento credenziali</span>
+          </div>
+
+          <form class="password-form" method="post" action="/customer/change-password">
+            <div class="form-group">
+              <label for="currentPassword">Password attuale</label>
+              <input
+                type="password"
+                id="currentPassword"
+                name="currentPassword"
+                placeholder="Inserisci la password attuale"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="newPassword">Nuova password</label>
+              <input
+                type="password"
+                id="newPassword"
+                name="newPassword"
+                placeholder="Inserisci la nuova password"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="confirmPassword">Conferma nuova password</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Ripeti la nuova password"
+                required
+              />
+            </div>
+
+            <div class="alert success" th:if="${successMessage != null}" th:text="${successMessage}">
+              Password aggiornata correttamente.
+            </div>
+
+            <div class="alert error" th:if="${errorMessage != null}" th:text="${errorMessage}">
+              Si è verificato un errore.
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full">
+              Aggiorna password
+            </button>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

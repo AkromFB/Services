@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrazione | Consulenza+</title>
+  <link rel="stylesheet" href="/css/auth.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <a href="/" class="header__logo">CONSULENZA+</a>
+      <nav class="header__nav" aria-label="Navigazione principale">
+        <a class="nav__link" href="/">Home</a>
+        <a class="nav__link" href="/plans">Piani</a>
+        <a class="nav__link" href="/login">Login</a>
+      </nav>
+      <a href="/login" class="btn btn--secondary">Hai già un account?</a>
+    </div>
+  </header>
+
+  <main class="auth">
+    <div class="container">
+      <div class="auth__grid">
+        <section class="auth__content">
+          <div class="eyebrow">Nuovo account</div>
+          <h1 class="auth__title">Registrati e avvia il rapporto con il team.</h1>
+          <p class="auth__description">La pagina di registrazione mantiene lo stesso impianto premium e professionale: tono aziendale, interfaccia pulita e un unico CSS condiviso con il login per una continuità totale.</p>
+          <ul class="auth__points">
+            <li>Flusso semplice per nuovi clienti e referenti aziendali.</li>
+            <li>Campi ordinati e leggibili anche da mobile.</li>
+            <li>Coerenza immediata con home, piani e accesso riservato.</li>
+          </ul>
+        </section>
+
+        <section class="auth-card" aria-labelledby="register-title">
+          <div class="auth-card__header">
+            <h2 class="auth-card__title" id="register-title">Crea il tuo account</h2>
+            <p class="auth-card__text">Compila i dati principali per iniziare il percorso con Consulenza+.</p>
+          </div>
+
+          <form class="form" id="form">
+            <div class="form__row form__row--2">
+              <div class="form__row">
+                <label class="label" for="name">Nome</label>
+                <input class="input" id="name" name="name" type="text" placeholder="Mario" />
+              </div>
+              <div class="form__row">
+                <label class="label" for="surname">Cognome</label>
+                <input class="input" id="surname" name="surname" type="text" placeholder="Rossi" />
+              </div>
+            </div>
+
+            <div class="form__row">
+              <label class="label" for="company">Azienda</label>
+              <input class="input" id="company" name="company" type="text" placeholder="Nome azienda" />
+            </div>
+
+            <div class="form__row">
+              <label class="label" for="register-email">Email aziendale</label>
+              <input class="input" id="register-email" name="email" type="email" placeholder="nome@azienda.it" />
+            </div>
+
+            <div class="form__row form__row--2">
+              <div class="form__row">
+                <label class="label" for="register-password">Password</label>
+                <input class="input" id="register-password" name="password" type="password" placeholder="Crea una password" />
+              </div>
+              <div class="form__row">
+                <label class="label" for="confirm-password">Conferma password</label>
+                <input class="input" id="confirm-password" type="password" placeholder="Ripeti la password" />
+              </div>
+            </div>
+
+            <label class="check"><input type="checkbox" /> Accetto i termini e autorizzo il trattamento dei dati per finalità di contatto</label>
+
+            <button class="btn btn--primary" type="submit">Crea account</button>
+
+            <div class="divider">oppure</div>
+
+            <a class="btn btn--secondary" href="/login">Hai già un account? Accedi</a>
+          </form>
+
+          <p class="auth-card__footer">Hai già un profilo? <a class="link" href="/login">Vai al login</a></p>
+
+          <div class="auth-note">Registrazione pensata per onboarding clienti, accesso a materiali, documenti e percorsi consulenziali condivisi.</div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__copy">Consulenza+ — registrazione clienti con stile coerente e CSS condiviso.</p>
+      <p class="footer__meta">Un solo foglio di stile per login e registrazione, più manutenzione semplice.</p>
+    </div>
+  </footer>
+  <script src="/js/register.js"></script>
+</body>
+</html>
