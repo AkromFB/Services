@@ -22,9 +22,8 @@ public class AdminSeeder {
     @Bean
     public Faker faker() {
         // Seed fisso per risultati deterministici (opzionale)
-        return new Faker(new Locale("it-IT"),new Random(12345));
+        return new Faker(new Locale("it-IT"), new Random(12345));
     }
-
 
     @Bean
     CommandLineRunner seedAdmin(AdminService adminService, AdminRepository adminRepository) {
@@ -35,25 +34,29 @@ public class AdminSeeder {
             }
         };
     }
+
     @Bean
     CommandLineRunner seedClienti(CustomerService customerService, CustomerRepository customerRepository) {
-        return args ->{
+        return args -> {
             Faker faker = faker();
             System.out.println("Inizio generazione 20 clienti...");
             for (int i = 0; i < 20; i++) {
-                // Genera i dati
-                Customer customer = new Customer();
-                customer.setName(faker.name().firstName()); // Genera Nome
-            customer.setSurname(faker.name().lastName());
-            customer.setEmail(faker.internet().emailAddress());
-            customer.setCompany(faker.company().name());
-            // Genera una password semplice (puoi usarla per hash in produzione)
-            customer.setPassword(faker.internet().password());
-            
-            // Salva nel DB
-            customerRepository.save(customer);
+                String email = faker.internet().emailAddress();
+                if (customerRepository.findByEmail(email).isEmpty()) {
+                    // Genera i dati
+                    Customer customer = new Customer();
+                    customer.setName(faker.name().firstName()); // Genera Nome
+                    customer.setSurname(faker.name().lastName());
+                    customer.setEmail(email);
+                    customer.setCompany(faker.company().name());
+                    // Genera una password semplice (puoi usarla per hash in produzione)
+                    customer.setPassword(faker.internet().password());
+
+                    // Salva nel DB
+                    customerRepository.save(customer);
+                }
             }
-        System.out.println("Completato 20 clienti");
+            System.out.println("Completato 20 clienti");
         };
     }
 
