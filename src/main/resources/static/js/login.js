@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded",()=>{
     const loginForm = document.getElementById("form")
-    const host = "http://"+window.location.host
+    const host = window.location.origin
     console.log(loginForm)
     loginForm.addEventListener("submit",(e)=>{
         e.preventDefault()

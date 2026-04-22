@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded",()=>{
     const registerForm = document.getElementById("form")
-    const host = "http://"+window.location.host
+    const host = window.location.origin
     console.log(registerForm)
     registerForm.addEventListener("submit",(e)=>{
         e.preventDefault()
